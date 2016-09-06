@@ -1,0 +1,164 @@
+\documentclass[a4paper,10pt]{article}
+
+%A Few Useful Packages
+\usepackage{marvosym}
+\usepackage{fontspec}                   %for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip}   %other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[big]{layaureo}              %better formatting of the A4 page
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage{supertabular}               %for Grades
+\usepackage{titlesec}                   %custom \section
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+%%% modified for Karol Kozioł for ShareLaTeX use
+\setmainfont[
+SmallCapsFont = Fontin-SmallCaps.otf,
+BoldFont = Fontin-Bold.otf,
+ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+%%%
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+%Tweak a bit the top margin
+%\addtolength{\voffset}{-1.3cm}
+
+%Italian hyphenation for the word: ''corporations''
+\hyphenation{im-pre-se}
+
+%-------------WATERMARK TEST [**not part of a CV**]---------------
+\usepackage[absolute]{textpos}
+
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+
+\pagestyle{empty} % non-numbered pages
+
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+
+%--------------------TITLE-------------
+\par{\centering
+        {\Huge Deniz \textsc{Eren}
+    }\bigskip\par}
+
+%--------------------SECTIONS-----------------------------------
+%Section: Personal Data
+\section{Personal Data}
+
+\begin{tabular}{rl}
+    \textsc{Place and Date of Birth:} & Kazanlak, Bulgaria  | 15 11 1989 \\
+    \textsc{Citizenship:}   & Bulgarian, Turkish \\
+    %\textsc{Address:}   & My Address \\
+    %\textsc{Phone:}     & My Phone Number \\
+    %\textsc{email:}     & \href{mailto:my@mail.address}{my@mail.address}
+\end{tabular}
+
+%Section: Work Experience
+\section{Work Experience}
+\begin{tabular}{r|p{11cm}}
+ \textsc{Sep 2015-Present} & UTM4 Team Lead at \textsc{Labris Networks}, \\&\ Ankara, Turkey \\&\footnotesize{With my team we are building new version of Labris UTM. I am responsible for architecting the system and
+software components, designing new API structure, developing core components, leading team of talented colleagues and project management.}\\\multicolumn{2}{c}{} \\
+ \textsc{Jul 2010-Sep 2015} & Software and Systems Engineer at \textsc{Labris Networks}, \\&\ Ankara, Turkey \\&\footnotesize{
+ Working as software developer and system architect I had chance to design, develop and improve many UTM modules using combination of open source tools and tools we implement. Also I contributed to development of DDoS Mitigator where we both developed mitigation system and simulated various DDoS attacks to test our system. Projects I contributed are below:
+ \begin{itemize}
+ \item Redesigned and developed Microsoft Active Directory integration of UTM device, after that lead
+development of next version
+\item Redesigned and developed load balancing and failover module, after that lead development of next version
+\item Contributed to development team of Central Management System of Labris Security Devices
+\item Contributed to development team of Labris DDoS Mitigation System
+\item Contributed to development of Layer 7 network filtering module
+\item Redesigned and implemented most of the firewall module
+\item Developed cloud web filtering system
+\item Developed HTTPS filtering modules
+\item Contributed to development of many Labris UTM modules
+\item Done system administration tasks
+\item Mentored junior developers
+\end{itemize}
+}\\\multicolumn{2}{c}{} \\
+\textsc{Jul 2009-Aug 2009} & Summer Intern at \textsc{Pro-G Information Security and Research Ltd.}, \\&\ Ankara, Turkey \\&\footnotesize{
+\begin{itemize}
+\item Installed and configured end-point protection software
+\item Worked with load/stress testing tools
+\end{itemize}
+}
+\end{tabular}
+
+%Section: Education
+\section{Education}
+\begin{tabular}{rl} 
+ \textsc{Sep 2015-Present} & MS in \textsc{Cyber Security}, \textbf{Middle East Technical University}, \\&\ Ankara, Turkey\\&\\
+\textsc{Sep 2008-Jun 2014} & BS in \textsc{Computer Engineering}, \textbf{Middle East Technical University}, \\&\ Ankara, Turkey
+\end{tabular}
+
+%Section: Volunteer Experience
+\section{Volunteer Experience}
+\begin{tabular}{r|p{11cm}}
+\textsc{May 2009-Feb 2011} & System Administrator at \textsc{IEEE METU Student Branch}, \\&\ Ankara, Turkey \\&\footnotesize{
+\begin{itemize}
+\item Managed GNU/Linux servers of student branch, which are running web/mail/DNS etc. services
+\item Managed Google Apps applications of student branch
+\item Gave trainings about GNU/Linux, networking, security
+\end{itemize}
+}\\\multicolumn{2}{c}{} \\
+\textsc{Sep 2010-Jan 2011} & C Programming Instructor at \textsc{IEEE METU Student Branch}, \\&\ Ankara, Turkey \\&\footnotesize{Gave "Introduction to C Programming" course to freshman engineering students.}
+\end{tabular}
+
+%Section: Skills
+\section{Skills}
+\begin{tabular}{rp{11cm}}
+ Programming:& \textsc{python}, \textsc{c/c++}, \textsc{bash}, \textsc{awk}\\
+Databases:& \textsc{postgresql}, \textsc{mysql}, \textsc{mongodb}\\
+Operating Systems:&  \textsc{CentOS}, \textsc{Debian}, \textsc{Ubuntu}, \textsc{Slackware},  \textsc{CoreOS}\\
+Open Source Technologies:& 
+\textsc{Linux Kernel}, \textsc{iptables}, \textsc{ipset}, \textsc{pf},  \textsc{Linux Namespaces}, \textsc{Docker}, \textsc{squid},  \textsc{gdb},  \textsc{Xen},  \textsc{VirtualBox}, \textsc{hping},  \textsc{GNU Tools},  \textsc{vim},  \textsc{Nginx},  \textsc{Apache},  \textsc{redis},  \textsc{celery},  \textsc{ansible},  \textsc{metasploit},  \textsc{nessus} \\
+
+\end{tabular}
+
+%Section: Personal Projects
+\section{Personal Projects}
+\begin{tabular}{r|p{11cm}}
+\textsc{LogViewer} & \footnotesize{
+LogViewer is real-time log viewing and filtering utility. Server logs are redirected to logviewer machine using syslog, after that logs are parsed and inserted into ElasticSearch by logviewer. Project is similar to ELK stack. Used technologies: Python, Django, elasticsearch, mongodb.
+}\\\multicolumn{2}{c}{} \\
+\textsc{In-Store Analytics} & \footnotesize{The project aims to track customer walk route in-stores. Customers are tracked according to their phone's WiFi MAC address. Raspberry-pi with WiFi dongle collects MAC addresses of wireless devices in its range and after parsing the data sends collected data to Google Analytics. Used technologies: Golang, Raspbian, OpenVPN, Docker, AWS Elastic Beanstalk, Amazon Route 53, Amazon RDS(Postgresql), Google Analytics, Aircrack-ng, Tshark.
+}\\\multicolumn{2}{c}{} \\
+\textsc{SiegeTor} & \footnotesize{An experimental HTTP flood tool. This tool makes distributed HTTP flood attack using Tor network for IP spoofing and Siege HTTP stress tool for flooding.  Used technologies: Tor, privoxy, siege, Python.
+}\\\multicolumn{2}{c}{} \\
+\textsc{DebeArchiever} & \footnotesize{Front page achiever of one of the most visited sites of Turkey. Parser daily gets snapshot of the site and commits the snapshot to Github. Github is used as data storage and Github pages is used for serving the archive. Monthly 1000 users visit the site. Used technologies: Golang, Jekyll. 
+} \\
+\end{tabular}
+
+%Section: Languages
+\section{Languages}
+\begin{tabular}{rl}
+ \textsc{Turkish:}&Mothertongue\\
+\textsc{English:}&Fluent\\
+\textsc{Bulgarian:}&Fluent\\
+\textsc{Southern Slavic Languages:}&Basic\\
+\end{tabular}
+
+%Section: Interests and Activities
+\section{Interests and Activities}
+Paragliding, Karate-Do(Shotokan), Lock Picking\\
+Skiing, Snowboarding, Traveling
+
+
+\end{document}
+
